@@ -20,15 +20,11 @@ A PostgreSQL portfolio project created to practice SQL for Data Analytics using 
 
 ## 📂 Project Structure
 
-├── create_tables.sql
-├── insert_data.sql
-├── day01_select_where.sql
-├── day02_joins.sql
-├── day03_groupby_having.sql
-├── day04_subquery_cte.sql
-├── day05_window_functions.sql
-└── optimization.sql
-
-## 🚀 Status
-
-In Progress
+- create_tables.sql
+- insert_data.sql
+- day01_select_where.sql
+- day02_joins.sql
+- day03_groupby_having.sql
+- day04_subquery_cte.sql
+- day05_window_functions.sql
+- optimization.sql
