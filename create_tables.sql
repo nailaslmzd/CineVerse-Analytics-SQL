@@ -4,7 +4,7 @@
  PostgreSQL Database Schema
  Author: Naile Salimzade
 =========================================
-*/
+*/ 
 
 -- ======================================
 -- Drop Tables (Optional)
