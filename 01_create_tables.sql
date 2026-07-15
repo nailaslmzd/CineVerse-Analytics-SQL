@@ -2,7 +2,7 @@
 =========================================
  CineVerse Analytics
  PostgreSQL Database Schema
- Author: Naile Salimzade
+ Author: Naila Selimzade
 =========================================
 */ 
 
