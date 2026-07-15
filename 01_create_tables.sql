@@ -3,20 +3,6 @@
  CineVerse Analytics
  PostgreSQL Database Schema
  Author: Naila Selimzade
-=========================================
-*/ 
-
--- ======================================
--- Drop Tables (Optional)
--- ======================================
-
-DROP TABLE IF EXISTS awards CASCADE;
-DROP TABLE IF EXISTS box_office CASCADE;
-DROP TABLE IF EXISTS movie_cast CASCADE;
-DROP TABLE IF EXISTS movies CASCADE;
-DROP TABLE IF EXISTS actors CASCADE;
-DROP TABLE IF EXISTS studios CASCADE;
-
 -- ======================================
 -- Studios
 -- ====================================== 
