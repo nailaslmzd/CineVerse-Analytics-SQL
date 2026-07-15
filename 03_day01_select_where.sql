@@ -3,7 +3,7 @@
  CineVerse Analytics
  Day 01 - SQL Fundamentals
  Topic: SELECT, WHERE, ORDER BY, LIMIT
- Author: Naile Salimzade
+ Author: Naila Selimzade
  Database: PostgreSQL
 ===========================================================
 */
