@@ -1,11 +1,16 @@
 /*
-=========================================
+===========================================================
  CineVerse Analytics
  PostgreSQL Database Schema
  Author: Naila Selimzade
--- ======================================
--- Studios
--- ====================================== 
+ Database: PostgreSQL
+===========================================================
+*/
+
+-- =========================================================
+-- Table: Studios
+-- Stores information about movie production studios.
+-- =========================================================
 
 CREATE TABLE studios (
     studio_id SERIAL PRIMARY KEY,
@@ -13,9 +18,10 @@ CREATE TABLE studios (
     headquarters VARCHAR(100) NOT NULL
 );
 
--- ======================================
--- Actors
--- ======================================
+-- =========================================================
+-- Table: Actors
+-- Stores information about actors.
+-- =========================================================
 
 CREATE TABLE actors (
     actor_id SERIAL PRIMARY KEY,
@@ -25,9 +31,10 @@ CREATE TABLE actors (
     birth_year INT
 );
 
--- ======================================
--- Movies
--- ======================================
+-- =========================================================
+-- Table: Movies
+-- Stores information about movies.
+-- =========================================================
 
 CREATE TABLE movies (
     movie_id SERIAL PRIMARY KEY,
@@ -38,9 +45,10 @@ CREATE TABLE movies (
     studio_id INT REFERENCES studios(studio_id)
 );
 
--- ======================================
--- Movie Cast
--- ======================================
+-- =========================================================
+-- Table: Movie Cast
+-- Links actors to movies and stores their roles.
+-- =========================================================
 
 CREATE TABLE movie_cast (
     cast_id SERIAL PRIMARY KEY,
@@ -49,9 +57,10 @@ CREATE TABLE movie_cast (
     role_name VARCHAR(30)
 );
 
--- ======================================
--- Box Office
--- ======================================
+-- =========================================================
+-- Table: Box Office
+-- Stores monthly box office revenue for each movie.
+-- =========================================================
 
 CREATE TABLE box_office (
     revenue_id SERIAL PRIMARY KEY,
@@ -61,9 +70,10 @@ CREATE TABLE box_office (
     revenue_month DATE
 );
 
--- ======================================
--- Awards
--- ======================================
+-- =========================================================
+-- Table: Awards
+-- Stores awards received by actors.
+-- =========================================================
 
 CREATE TABLE awards (
     award_id SERIAL PRIMARY KEY,
