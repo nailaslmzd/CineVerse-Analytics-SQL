@@ -1,0 +1,60 @@
+/*
+=========================================
+ CINEVERSE ANALYTICS
+ DAY 06 - QUERY OPTIMIZATION
+=========================================
+*/
+
+-- TASK 1 | CREATE INDEXES
+-- Indexes improve query performance by reducing the amount of data scanned.
+
+CREATE INDEX IDX_MOVIES_STUDIO
+ON MOVIES(STUDIO_ID);
+
+CREATE INDEX IDX_BOX_OFFICE_MOVIE
+ON BOX_OFFICE(MOVIE_ID);
+
+CREATE INDEX IDX_MOVIE_CAST_ACTOR
+ON MOVIE_CAST(ACTOR_ID);
+
+CREATE INDEX IDX_MOVIE_CAST_MOVIE
+ON MOVIE_CAST(MOVIE_ID);
+
+
+-- TASK 2 | CORRELATED SUBQUERY
+-- Finds movies whose budget is higher than the average budget of their genre.
+
+SELECT M1.TITLE, M1.GENRE, M1.BUDGET
+FROM MOVIES M1
+WHERE M1.BUDGET >
+(SELECT AVG(M2.BUDGET)
+FROM MOVIES M2
+WHERE M2.GENRE = M1.GENRE);
+
+
+-- TASK 3 | OPTIMIZED QUERY USING CTE
+-- Replaces the correlated subquery with a CTE and JOIN for better readability and scalability.
+
+WITH GENRE_AVERAGE AS
+(SELECT GENRE,
+AVG(BUDGET) AS AVG_BUDGET
+FROM MOVIES
+GROUP BY GENRE)
+SELECT M.TITLE, M.GENRE, M.BUDGET
+FROM MOVIES M
+INNER JOIN GENRE_AVERAGE G
+ON M.GENRE = G.GENRE
+WHERE M.BUDGET > G.AVG_BUDGET;
+
+
+-- TASK 4 | QUERY EXECUTION PLAN
+-- Displays the execution plan to help analyze query performance.
+
+EXPLAIN ANALYZE
+
+SELECT M.TITLE,
+SUM(B.REVENUE) AS TOTAL_REVENUE
+FROM MOVIES M
+INNER JOIN BOX_OFFICE B
+ON M.MOVIE_ID = B.MOVIE_ID
+GROUP BY M.TITLE;
